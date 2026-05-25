@@ -12,16 +12,13 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                quiety {
-                    script{
-                        logs.info("Blop")
-                        logs.warning("Blop")
-                        logs.error("Blop")
-                        logs.debug("Blop")
-                        logs.system("Blop")
-                    }
+                script{
+                    logs.info("Blop")
+                    logs.warning("Blop")
+                    logs.error("Blop")
+                    logs.debug("Blop")
+                    logs.system("Blop")
                 }
-                
             }
         }
     }
