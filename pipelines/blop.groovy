@@ -1,5 +1,7 @@
 @Library("jenkins-shared-libs") _
 
+import src.logs
+
 pipeline {
     agent any
 
