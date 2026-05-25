@@ -18,6 +18,7 @@ pipeline {
                     logs.error("Blop")
                     logs.debug("Blop")
                     logs.system("Blop")
+                    logs.success("Blop")
                 }
             }
         }
