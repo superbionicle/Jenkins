@@ -48,3 +48,15 @@ Choisir "Modern SCM" pour "Retrievak method" et "Github" pour "Source Code Manag
 > Attention : de la même manière que le repo Jenkins doit être en public, le jenkins-shared-libs doit également être en public
 > Des credentials sont recommandées mais non nécessaires pour cela.
 
+## Nettoyer les logs
+Une fois le premier job lancé, on aperçoit énormément de logs commençant par `[Pipeline]`. Cela peut vite nuire à la visibilité des logs.
+Installer le [plugin "Simple Theme"](https://plugins.jenkins.io/simple-theme-plugin/).
+Dans "Apparence générale", cliquer sur "Ajouter" de "Theme elements" et sélectionner "Extra CSS" et ajouter le contenu suivant :
+```css
+.pipeline-annotated {
+     display: none; 
+}
+.pipeline-new-node {
+      display: none; 
+}
+```
