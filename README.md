@@ -24,6 +24,7 @@ Valider les modifications. Dans le panneau à gauche, cliquer sur "Trush SSH Hos
 Dans les noeuds, sélectionner "Contrôleur" puis choisissez "Réserver ce noeud uniquement pour les jobs qui lui sont attachés" pour "Utilisation".
 
 # Mise en place du lien avec le repo Github
+## Création d'un premier job
 Dans "Nouvel Item", créer un nouveau job "Pipeline".
 Dans la configuration de ce job, descendre au niveau de "Pipeline" et dans "Definition", sélectionner "Pipeline script from SCM".
 Dans "SCM", sélectionner "Git" puis mettre le lien de votre repo dans "Repository URL". Aucun credential n'est requis.
@@ -35,3 +36,13 @@ Dans "Banch Specifier", saisir la branche désirée.
 > Attention : la branche par défaut créée par Github est `main` et non `master`
 
 Dans "Script Path", saisir `pipelines/script.groovy`, où `script.groovy` est le script à utiliser dans la pipeline.
+Si le job est lancé, il tombera en échec car la library *jenkins-shared-libs* n'est pas encore configuré sur le Jenkins.
+
+## Création d'une library
+Dans "System", descendre jusque "Global Trusted Pipeline Libraries".
+Renseigner `jenkins-shared-libs` dans "Name".
+Choisir "Modern SCM" pour "Retrievak method" et "Github" pour "Source Code Management".
+
+> Attention : de la même manière que le repo Jenkins doit être en public, le jenkins-shared-libs doit également être en public
+> Des credentials sont recommandées mais non nécessaires pour cela.
+
