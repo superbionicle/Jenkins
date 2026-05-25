@@ -5,6 +5,7 @@ pipeline {
 
     options {
         ansiColor('xterm')
+        quietPeriod(0)
     }
 
     stages {
