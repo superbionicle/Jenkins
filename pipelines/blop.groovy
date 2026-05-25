@@ -5,19 +5,23 @@ pipeline {
 
     options {
         ansiColor('xterm')
+        disableResume()
         quietPeriod(0)
     }
 
     stages {
         stage('Hello') {
             steps {
-                script{
-                    logs.info("Blop")
-                    logs.warning("Blop")
-                    logs.error("Blop")
-                    logs.debug("Blop")
-                    logs.system("Blop")
+                quiety {
+                    script{
+                        logs.info("Blop")
+                        logs.warning("Blop")
+                        logs.error("Blop")
+                        logs.debug("Blop")
+                        logs.system("Blop")
+                    }
                 }
+                
             }
         }
     }
