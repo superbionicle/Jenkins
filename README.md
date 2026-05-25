@@ -1,4 +1,6 @@
 # Jenkins
+# Mise à jour du repo complet
+Mise à jour du submodule puis du repo : `jenkins-shared-libs` : `git submodule update --remote --recursive; git pull`
 
 # Monitoring Glance
 Pour permettre à Glance de faire le monitoring :
@@ -31,7 +33,7 @@ Dans "SCM", sélectionner "Git" puis mettre le lien de votre repo dans "Reposito
 
 > Attention : il faut que le repo soit en public
 
-Dans "Banch Specifier", saisir la branche désirée.
+Dans "Branch Specifier", saisir la branche désirée.
 
 > Attention : la branche par défaut créée par Github est `main` et non `master`
 
@@ -41,7 +43,7 @@ Si le job est lancé, il tombera en échec car la library *jenkins-shared-libs* 
 ## Création d'une library
 Dans "System", descendre jusque "Global Trusted Pipeline Libraries".
 Renseigner `jenkins-shared-libs` dans "Name".
-Choisir "Modern SCM" pour "Retrievak method" et "Github" pour "Source Code Management".
+Choisir "Modern SCM" pour "Retrievak method" et "Github" pour "Source Code Management" et renseigner l'URL du repo.
 
 > Attention : de la même manière que le repo Jenkins doit être en public, le jenkins-shared-libs doit également être en public
 > Des credentials sont recommandées mais non nécessaires pour cela.
